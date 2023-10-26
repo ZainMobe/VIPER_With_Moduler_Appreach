@@ -15,6 +15,7 @@ Just download the project. It comes with all resources required to run the proje
 - Swift Documentation with images and screenshots
 - Supports Realm offline storage
 - Using `Realm Object` with Swift `Codable`
+- Unit test cases for `Database` operations and `Networking`
 
 
 ## About
