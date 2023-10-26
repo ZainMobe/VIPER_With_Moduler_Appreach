@@ -29,6 +29,8 @@
 		BF515DDF2AE91F580035D308 /* UniversityNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF515DDE2AE91F580035D308 /* UniversityNetworkDataSource.swift */; };
 		BF515DE12AE920810035D308 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF515DE02AE920810035D308 /* RealmStorage.swift */; };
 		BFF10EDF2AEA3886007EC302 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = BFF10EDE2AEA3886007EC302 /* Documentation.docc */; };
+		BFF10EE22AEA6F43007EC302 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF10EE12AEA6F43007EC302 /* RealmTests.swift */; };
+		BFF10EE42AEA7299007EC302 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF10EE32AEA7299007EC302 /* NetworkingTests.swift */; };
 		C7E1782E2AE7F184000A7D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1782D2AE7F184000A7D2C /* AppDelegate.swift */; };
 		C7E178302AE7F184000A7D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1782F2AE7F184000A7D2C /* SceneDelegate.swift */; };
 		C7E178352AE7F184000A7D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E178332AE7F184000A7D2C /* Main.storyboard */; };
@@ -103,6 +105,8 @@
 		BF515DDE2AE91F580035D308 /* UniversityNetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityNetworkDataSource.swift; sourceTree = "<group>"; };
 		BF515DE02AE920810035D308 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		BFF10EDE2AEA3886007EC302 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		BFF10EE12AEA6F43007EC302 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
+		BFF10EE32AEA7299007EC302 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		C7E1782A2AE7F184000A7D2C /* TaskAssignmentMain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskAssignmentMain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1782D2AE7F184000A7D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E1782F2AE7F184000A7D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				C7E178442AE7F185000A7D2C /* TaskAssignmentMainTests.swift */,
+				BFF10EE32AEA7299007EC302 /* NetworkingTests.swift */,
+				BFF10EE12AEA6F43007EC302 /* RealmTests.swift */,
 			);
 			path = TaskAssignmentMainTests;
 			sourceTree = "<group>";
@@ -693,6 +699,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E178452AE7F185000A7D2C /* TaskAssignmentMainTests.swift in Sources */,
+				BFF10EE42AEA7299007EC302 /* NetworkingTests.swift in Sources */,
+				BFF10EE22AEA6F43007EC302 /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PWC..TaskAssignmentMainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -947,7 +955,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PWC..TaskAssignmentMainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -966,6 +974,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PWC..TaskAssignmentMainUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -984,6 +993,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PWC..TaskAssignmentMainUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

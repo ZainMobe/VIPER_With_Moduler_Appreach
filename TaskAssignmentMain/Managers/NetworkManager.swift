@@ -24,20 +24,40 @@ class NetworkManager {
     static let shared = NetworkManager()
     ///Private initialiser to restric object construction outside of the scope.
     private init() { }
-    
+    /// This function will decode data to generic codable object..
+    ///
+    ///- Parameters:
+    ///   - data: `Data` object.
+    func parseData<T: Codable>(_ data: Data) throws -> T {
+        try JSONDecoder().decode(T.self, from: data)
+    }
+    /// This function will create `URLComponents`.
+    ///
+    ///- Parameters:
+    ///   - baseURL: `String` object.
+    ///   - endPoint: `String` object.
+    ///   - params: `[String: String]` object.
+    ///
+    ///- Returns: Optional `URLComponents` object.
+    func urlParser(baseURL: String, endPoint: String, params: [String: String]?) -> URLComponents? {
+        guard var components = URLComponents(string: baseURL+endPoint) else {
+            return nil
+        }
+        if let params {
+            components.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value)}
+        }
+        return components
+    }
     /// Make networking get request.
-
+    ///
     ///- Parameters:
     ///   - endPoint: Route endpoint. Do not append base URL.
     ///   - params: Optional query parameters
     ///   - completion: Return result type with generic (`Codable`) success object and `Error` object.
     func makeGetRequest<T: Codable>(endPoint: String, params: [String: String]? = nil, completion: @escaping ((Result<T, Error>) -> Void)) {
-        guard var components = URLComponents(string: APIConstants.baseURL+endPoint) else {
+        guard let components = urlParser(baseURL: APIConstants.baseURL, endPoint: endPoint, params: params) else {
             completion(.failure(ApiErrors.serverDown))
             return
-        }
-        if let params {
-            components.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value)}
         }
         
         guard let url = components.url else {
@@ -54,7 +74,7 @@ class NetworkManager {
                 return
             }
             do {
-                let obj = try JSONDecoder().decode(T.self, from: data)
+                let obj: T = try self.parseData(data)//try JSONDecoder().decode(T.self, from: data)
                 completion(.success(obj))
             } catch let jsonErr {
                 debugPrint(jsonErr)
