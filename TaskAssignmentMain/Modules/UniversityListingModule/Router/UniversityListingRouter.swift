@@ -27,6 +27,8 @@ final class UniversityListingRouterImpl {
         self.navigationController = navigationController
     }
     ///Static function responsible to intialise UniversityListing module.
+    ///- Parameters:
+    ///   - navController: `UINavigationController`
     ///- Returns: UniversityListingViewController type of `UIViewController`
     static func create(navController: UINavigationController) -> UIViewController {
         let view = UniversityListingViewController()

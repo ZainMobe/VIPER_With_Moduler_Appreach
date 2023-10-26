@@ -7,17 +7,20 @@
 
 import Foundation
 
-
+///`UniversityListingInteractorImpl` implementation
 class UniversityDetailInteractorImpl: UniversityDetailInteractor {
-    
-    var presenter: UniversityDetailPresenterRouterActions?
+    ///Holds Presenter actions
+    var presenter: UniversityDetailPresenterInteractionActions?
+    ///Holds `Presenter` object
     let university: UniversityDetailDomain
-    
-    
+    ///Inject any interactor dependency here.
+    ///- Parameters:
+    ///   - university: `UniversityDetailDomain` object.
     init(university: UniversityDetailDomain) {
         self.university = university
     }
-    
+    ///Get `UniversityDetailDomain` object.
+    ///- Returns: `UniversityDetailDomain` object.
     func getUniversityDetails() -> UniversityDetailDomain {
         university
     }

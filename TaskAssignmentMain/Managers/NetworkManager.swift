@@ -8,7 +8,7 @@
 import Foundation
 
 
-
+///API errors enumiration.
 enum ApiErrors: Error {
     case invalidResponse
     case failToParse
@@ -18,13 +18,19 @@ enum ApiErrors: Error {
     case serverDown
 }
 
-
+//MARK: NetworkManager singleton object.
 class NetworkManager {
+    ///Only Shared instance of `NetworkManager`
     static let shared = NetworkManager()
-    
+    ///Private initialiser to restric object construction outside of the scope.
     private init() { }
     
-    
+    /// Make networking get request.
+
+    ///- Parameters:
+    ///   - endPoint: Route endpoint. Do not append base URL.
+    ///   - params: Optional query parameters
+    ///   - completion: Return result type with generic (`Codable`) success object and `Error` object.
     func makeGetRequest<T: Codable>(endPoint: String, params: [String: String]? = nil, completion: @escaping ((Result<T, Error>) -> Void)) {
         guard var components = URLComponents(string: APIConstants.baseURL+endPoint) else {
             completion(.failure(ApiErrors.serverDown))
@@ -57,7 +63,7 @@ class NetworkManager {
         }.resume()
     }
 }
-
+///Extension ofr `ApiErrors`.
 extension ApiErrors: LocalizedError {
     var errorDescription: String? {
         switch self {

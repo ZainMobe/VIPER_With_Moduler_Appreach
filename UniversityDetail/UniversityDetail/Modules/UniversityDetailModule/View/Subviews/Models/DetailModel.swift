@@ -7,7 +7,8 @@
 
 import Foundation
 
-
+///Define all inputs to `DetailView` here.
 struct DetailModel {
+    ///Object of `UniversityDetailDomain` model.
     let model: UniversityDetailDomain
 }

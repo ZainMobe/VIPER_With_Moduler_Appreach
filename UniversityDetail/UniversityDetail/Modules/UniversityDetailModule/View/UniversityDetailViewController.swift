@@ -6,12 +6,23 @@
 //
 
 import UIKit
-
+//MARK: ViewController implementation
 class UniversityDetailViewController: UIViewController, UniversityDetailView {
+    ///Stack view which will hold all subviews.
     @IBOutlet weak var contentStackView: UIStackView!
     
     
     var presenter: UniversityDetailPresenterViewActions!
+    /// `DetailView` lazy variable.
+    /// Initialise and store university detail view in this veriable
+    /// ```swift
+    /// func yourMethod() {
+    ///     detailView = //Your initialisation code
+    /// }
+    /// ```
+    ///
+    /// ![A screenshot of DetailView , ](DocDetailSubView)
+    ///
     private lazy var detailView = DetailView()
 
 
@@ -20,13 +31,13 @@ class UniversityDetailViewController: UIViewController, UniversityDetailView {
         // Do any additional setup after loading the view.
         presenter.viewDidLoad()
     }
-
+    /// This will initialise `UniversityDetailViewController` from `xib`.
     convenience init() {
         self.init(nibName: "\(UniversityDetailViewController.self)", bundle: Bundle(for: UniversityDetailViewController.self))
     }
 
 }
-
+//MARK: View Delegate Methods
 extension UniversityDetailViewController {
     func setupUI() {
         navigationController?.setNavigationBarHidden(false, animated: false)

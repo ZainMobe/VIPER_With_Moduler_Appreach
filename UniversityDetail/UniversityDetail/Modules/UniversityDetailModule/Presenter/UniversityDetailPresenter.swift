@@ -7,12 +7,17 @@
 
 import Foundation
 
-
+//MARK: Presenter implementation
 class UniversityDetailPresenterImpl: UniversityDetailPresenter {
+    ///Holds View actions
     let view: UniversityDetailViewActions
+    ///Holds Interactor actions
     let interactor: UniversityDetailInteractorActions
+    ///Holds Router actions
     let router: UniversityDetailRouterActions
+    ///Holds View actions
     weak var detailView: DetailViewActions?
+    /// Holds `UniversityDetailDelegates` delegates. Use this to communicate with confirming module.
     fileprivate weak var delegates: UniversityDetailDelegates?
     var navigationTitle: String  = "Details"
     

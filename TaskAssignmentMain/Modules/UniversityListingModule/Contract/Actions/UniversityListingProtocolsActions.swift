@@ -33,7 +33,7 @@ protocol UniversityListingServiceActions: AnyObject {
 /// `View` will implement these actions. `Presenter` should be responsible to hold these actions.
 /// Presenter can use use these actions to interact with View.
 protocol UniversityListingViewActions: AnyObject {
-    
+    ///Use this method when all setup resource are ready and view is ready to setup.
     func setupUI()
     /// Use this method to add `UniversityListView`.
     ///

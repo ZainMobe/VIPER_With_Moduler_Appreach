@@ -8,7 +8,9 @@
 import UIKit
 //MARK: ViewController implementation
 class UniversityListingViewController: UIViewController, UniversityListingView {
+    ///Stack view which will hold all subviews.
     @IBOutlet weak var contentStackView: UIStackView!
+    /// Activity indicator view. Use this to show / stop loading animation
     @IBOutlet weak var loaderActivity: UIActivityIndicatorView!
     
     

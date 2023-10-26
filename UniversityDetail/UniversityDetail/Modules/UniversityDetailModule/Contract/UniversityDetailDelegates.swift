@@ -7,7 +7,8 @@
 
 import Foundation
 
-
+/// `Presenter` from previous module will implement this. .
 public protocol UniversityDetailDelegates: AnyObject {
+    ///Called when user tapp on refresh button from the view.
     func refreshList()
 }

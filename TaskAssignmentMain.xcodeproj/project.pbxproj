@@ -296,7 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				BF114BA62AE7FBA7000EFCD1 /* Utilities */,
-				C7E178712AE7F8BD000A7D2C /* Networking */,
+				C7E178712AE7F8BD000A7D2C /* Managers */,
 				C7E1785E2AE7F1C5000A7D2C /* Modules */,
 				C7E1782D2AE7F184000A7D2C /* AppDelegate.swift */,
 				C7E1782F2AE7F184000A7D2C /* SceneDelegate.swift */,
@@ -400,13 +400,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		C7E178712AE7F8BD000A7D2C /* Networking */ = {
+		C7E178712AE7F8BD000A7D2C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				BF114BA42AE7FB4F000EFCD1 /* NetworkManager.swift */,
 				BF515DE02AE920810035D308 /* RealmStorage.swift */,
 			);
-			path = Networking;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		F3F5761D7466B940C8806722 /* Frameworks */ = {
