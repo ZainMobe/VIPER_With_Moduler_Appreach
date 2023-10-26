@@ -12,6 +12,9 @@ Just download the project. It comes with all resources required to run the proje
 - Moduler approach
 - Multiple projects in single project
 - Inter module dependecy handling
+- Swift Documentation with images and screenshots
+- Supports Realm offline storage
+- Using `Realm Object` with Swift `Codable`
 
 
 ## About
