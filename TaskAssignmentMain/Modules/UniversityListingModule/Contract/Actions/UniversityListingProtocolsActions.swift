@@ -16,6 +16,8 @@ protocol UniversityListingServiceActions: AnyObject {
 protocol UniversityListingViewActions: AnyObject {
     func setupUI()
     func addVehicleList()
+    func showLoader()
+    func hideLoader()
 }
 
 protocol UniversityListingInteractorActions: AnyObject {
@@ -24,7 +26,6 @@ protocol UniversityListingInteractorActions: AnyObject {
 }
 
 protocol UniversityListingPresenterViewActions: AnyObject {
-    var navigationTitle: String {get}
     func viewDidLoad()
     func configure(universityListView: UniversityListViewActions)
 }

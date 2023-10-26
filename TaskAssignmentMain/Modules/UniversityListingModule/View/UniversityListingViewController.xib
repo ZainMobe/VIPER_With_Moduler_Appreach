@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniversityListingViewController" customModule="TaskAssignmentMain" customModuleProvider="target">
             <connections>
                 <outlet property="contentStackView" destination="Xdy-Td-92k" id="6y0-QH-MAf"/>
+                <outlet property="loaderActivity" destination="vJB-bd-98w" id="yX5-LG-mi1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,10 +23,21 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Td-92k">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                 </stackView>
+                <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vJB-bd-98w">
+                    <rect key="frame" x="156.66666666666666" y="386" width="80" height="80"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Rdx-MZ-23E"/>
+                        <constraint firstAttribute="height" constant="80" id="zqQ-Cx-Ld8"/>
+                    </constraints>
+                    <color key="color" systemColor="lightTextColor"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vJB-bd-98w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0T1-Zf-ElJ"/>
+                <constraint firstItem="vJB-bd-98w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="biS-W4-nOe"/>
                 <constraint firstItem="Xdy-Td-92k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="grN-Br-Bx7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xdy-Td-92k" secondAttribute="trailing" id="iqT-VM-fGo"/>
                 <constraint firstItem="Xdy-Td-92k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rMq-yd-hiQ"/>
@@ -36,6 +47,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

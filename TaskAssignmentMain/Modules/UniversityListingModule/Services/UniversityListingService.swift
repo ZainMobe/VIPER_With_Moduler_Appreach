@@ -43,7 +43,12 @@ class UniversityListingServiceImpl:  UniversityListingService {
                     self?.cleanupStoreUniversities(universities: list)
                     completion(.success(list))
                 case .failure(let failure):
-                    completion(.failure(failure))
+                    let listing = self?.fetchUniversityListFromLocalDB() ?? []
+                    if listing.count > 0 {
+                        completion(.success(listing))
+                    } else {
+                        completion(.failure(failure))
+                    }
             }
         }
     }

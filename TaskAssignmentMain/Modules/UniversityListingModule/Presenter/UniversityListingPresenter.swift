@@ -9,9 +9,7 @@ import Foundation
 import UniversityDetail
 
 
-class UniversityListingPresenterImpl: UniversityListingPresenter {
-    var navigationTitle: String = "Universities"
-    
+class UniversityListingPresenterImpl: UniversityListingPresenter {    
     let view: UniversityListingViewActions
     let interactor: UniversityListingInteractorActions
     let router: UniversityListingRouterActions
@@ -36,6 +34,7 @@ extension UniversityListingPresenterImpl {
     
     func configure(universityListView: UniversityListViewActions) {
         self.universityListView = universityListView
+        view.showLoader()
         interactor.fetchUniversityList(forceRefresh: false)
     }
     
@@ -46,6 +45,7 @@ extension UniversityListingPresenterImpl {
 //MARK: Presenter Interactor Delegates
 extension UniversityListingPresenterImpl {
     func fetchUniversitySuccess(universities: [UniversityListCellModel]) {
+        view.hideLoader()
         universityListModel = UniversityListModel(models: universities)
         setupUniversityListView()
     }
@@ -60,12 +60,14 @@ extension UniversityListingPresenterImpl {
     }
     
     func handleError(error: String) {
+        view.hideLoader()
         debugPrint("Handle error")
     }
 }
 
 extension UniversityListingPresenterImpl: UniversityDetailDelegates {
     func refreshList() {
+        view.showLoader()
         interactor.fetchUniversityList(forceRefresh: true)
     }
 }

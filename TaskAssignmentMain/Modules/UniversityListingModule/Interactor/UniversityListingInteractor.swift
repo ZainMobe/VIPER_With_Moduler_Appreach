@@ -39,8 +39,6 @@ class UniversityListingInteractorImpl: UniversityListingInteractor {
 
 extension UniversityListingInteractorImpl {
     func fetchUniversityList(forceRefresh: Bool) {
-        universities.removeAll()
-        presenter?.fetchUniversitySuccess(universities: [])
         fetchRemoteUniversities(forceRefresh: forceRefresh)
     }
     

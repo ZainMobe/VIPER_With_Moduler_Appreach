@@ -14,9 +14,10 @@ class UniversityDetailPresenterImpl: UniversityDetailPresenter {
     let router: UniversityDetailRouterActions
     weak var detailView: DetailViewActions?
     fileprivate weak var delegates: UniversityDetailDelegates?
+    var navigationTitle: String  = "Details"
     
     
-    required init(view: UniversityDetailViewActions, 
+    required init(view: UniversityDetailViewActions,
                   interactor: UniversityDetailInteractorActions,
                   router: UniversityDetailRouterActions,
                   delegates: UniversityDetailDelegates?) {

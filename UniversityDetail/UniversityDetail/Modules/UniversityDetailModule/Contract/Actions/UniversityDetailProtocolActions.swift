@@ -21,6 +21,7 @@ protocol UniversityDetailInteractorActions: AnyObject {
 }
 
 protocol UniversityDetailPresenterViewActions: AnyObject {
+    var navigationTitle: String {get}
     func viewDidLoad()
     func configure(detailView: DetailViewActions)
 }

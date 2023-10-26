@@ -9,6 +9,7 @@ import UIKit
 
 class UniversityListingViewController: UIViewController, UniversityListingView {
     @IBOutlet weak var contentStackView: UIStackView!
+    @IBOutlet weak var loaderActivity: UIActivityIndicatorView!
     
     
     var presenter: UniversityListingPresenterViewActions!
@@ -32,6 +33,7 @@ extension UniversityListingViewController {
     
     func setupUI() {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        loaderActivity.layer.cornerRadius = 8
     }
     
     func addVehicleList() {
@@ -40,5 +42,11 @@ extension UniversityListingViewController {
         contentStackView.addArrangedSubview(universityListView)
     }
     
+    func showLoader() {
+        loaderActivity.startAnimating()
+    }
     
+    func hideLoader() {
+        loaderActivity.stopAnimating()
+    }
 }

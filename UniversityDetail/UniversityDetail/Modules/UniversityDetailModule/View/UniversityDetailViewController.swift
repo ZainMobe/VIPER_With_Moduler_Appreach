@@ -30,6 +30,7 @@ class UniversityDetailViewController: UIViewController, UniversityDetailView {
 extension UniversityDetailViewController {
     func setupUI() {
         navigationController?.setNavigationBarHidden(false, animated: false)
+        title = presenter.navigationTitle
     }
     
     func addUniversityDetail() {
