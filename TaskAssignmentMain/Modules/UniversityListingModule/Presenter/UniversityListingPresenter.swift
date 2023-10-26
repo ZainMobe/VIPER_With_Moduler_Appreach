@@ -8,12 +8,17 @@
 import Foundation
 import UniversityDetail
 
-
-class UniversityListingPresenterImpl: UniversityListingPresenter {    
+//MARK: Presenter implementation
+class UniversityListingPresenterImpl: UniversityListingPresenter {
+    ///Holds View actions
     let view: UniversityListingViewActions
+    ///Holds Interactor actions
     let interactor: UniversityListingInteractorActions
+    ///Holds Router actions
     let router: UniversityListingRouterActions
+    ///Holds ListView actions
     var universityListView: UniversityListViewActions?
+    ///Holds `UniversityListModel` model object.
     fileprivate var universityListModel: UniversityListModel?
     
     
@@ -22,24 +27,31 @@ class UniversityListingPresenterImpl: UniversityListingPresenter {
         self.interactor = interactor
         self.router = router
     }
-    
+    /// fileprivate method used to setup `UniversityListView`. Call this method after universities list is fetched.
+    /// This method will setup `UniversityListView`.
+    /// This method will handle actions from `UniversityListView`.
+    /// In case any university is clicked, this method will call router to navigate to detail screen
+    fileprivate func setupUniversityListView() {
+        guard let universityListModel else {return}
+        universityListView?.dataSource = universityListModel
+        universityListView?.didSelectItem = {[weak self] index in
+            guard let university = self?.interactor.getUniversity(at: index) else {return}
+            self?.router.go(to: .pushDetailScreen(university: university, delegates: self))
+        }
+    }
     
 }
 //MARK: Presenter View Delegates
 extension UniversityListingPresenterImpl {
     func viewDidLoad() {
         view.setupUI()
-        view.addVehicleList()
+        view.addUniversityList()
     }
     
     func configure(universityListView: UniversityListViewActions) {
         self.universityListView = universityListView
         view.showLoader()
         interactor.fetchUniversityList(forceRefresh: false)
-    }
-    
-    func refreshControlStartRefreshing() {
-        
     }
 }
 //MARK: Presenter Interactor Delegates
@@ -50,21 +62,12 @@ extension UniversityListingPresenterImpl {
         setupUniversityListView()
     }
     
-    private func setupUniversityListView() {
-        guard let universityListModel else {return}
-        universityListView?.dataSource = universityListModel
-        universityListView?.didSelectItem = {[weak self] index in
-            guard let university = self?.interactor.getUniversity(at: index) else {return}
-            self?.router.go(to: .pushDetailScreen(university: university, delegates: self))
-        }
-    }
-    
     func handleError(error: String) {
         view.hideLoader()
         debugPrint("Handle error")
     }
 }
-
+//MARK: DetailView Delegates.
 extension UniversityListingPresenterImpl: UniversityDetailDelegates {
     func refreshList() {
         view.showLoader()

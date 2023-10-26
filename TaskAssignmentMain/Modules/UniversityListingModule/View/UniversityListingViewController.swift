@@ -6,13 +6,23 @@
 //
 
 import UIKit
-
+//MARK: ViewController implementation
 class UniversityListingViewController: UIViewController, UniversityListingView {
     @IBOutlet weak var contentStackView: UIStackView!
     @IBOutlet weak var loaderActivity: UIActivityIndicatorView!
     
     
     var presenter: UniversityListingPresenterViewActions!
+    /// `UniversityListView` lazy variable.
+    /// Initialise and store university list view in this veriable
+    /// ```swift
+    /// func yourMethod() {
+    ///     universityListView = //Your initialisation code
+    /// }
+    /// ```
+    ///
+    /// ![A screenshot of UniversityListView , ](DoclistView)
+    ///
     private lazy var universityListView = UniversityListView()
     
     
@@ -21,7 +31,7 @@ class UniversityListingViewController: UIViewController, UniversityListingView {
         // Do any additional setup after loading the view.
         presenter.viewDidLoad()
     }
-
+    /// This will initialise `UniversityListingViewController` from `xib`.
     convenience init() {
         self.init(nibName: "\(UniversityListingViewController.self)", bundle: nil)
     }
@@ -35,8 +45,8 @@ extension UniversityListingViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         loaderActivity.layer.cornerRadius = 8
     }
-    
-    func addVehicleList() {
+
+    func addUniversityList() {
         universityListView = UniversityListView.fromNib()
         presenter.configure(universityListView: universityListView)
         contentStackView.addArrangedSubview(universityListView)

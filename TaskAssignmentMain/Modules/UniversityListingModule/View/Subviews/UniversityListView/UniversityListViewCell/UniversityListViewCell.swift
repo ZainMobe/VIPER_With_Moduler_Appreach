@@ -6,11 +6,14 @@
 //
 
 import UIKit
-
+///`UniversityListViewCell` Implementation. Contains two labels.
+///![A screenshot of UniversityListViewCell , ](DocCellView)
 class UniversityListViewCell: UITableViewCell {
+    ///Cell identifier.
     static let identifier = "UniversityListViewCell"
-    
+    ///Assign university name to this label.
     @IBOutlet private var lblName: UILabel!
+    ///Assign university state to this label.
     @IBOutlet private var lblState: UILabel!
     
     

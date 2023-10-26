@@ -9,13 +9,7 @@ import Foundation
 import RealmSwift
 
 
-protocol UniversityLocalStorageDataActions: AnyObject {
-    func saveToLocalStorage(universities: [UniversityListResponse], completion: (()->Void)?)
-    func getFromLocalStorage() -> [UniversityListResponse]
-    func clearLocalStorate(completion: @escaping (()->Void))
-}
-
-
+//MARK: UniversityLocalStorage implementation
 class UniversityLocalStorage: UniversityLocalStorageDataActions {
     func saveToLocalStorage(universities: [UniversityListResponse], completion: (()->Void)?) {
         do {

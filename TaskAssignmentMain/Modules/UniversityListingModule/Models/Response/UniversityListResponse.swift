@@ -8,7 +8,8 @@
 import Foundation
 import RealmSwift
 
-
+//MARK: UniversityListResponse class.
+/// Confirm to `Object` and `Codable`. Support encoding and decoding and realm object.
 class UniversityListResponse: Object, Codable {
     @objc dynamic var stateprovince: String? = ""
     @objc dynamic var country: String? = ""
@@ -26,7 +27,7 @@ class UniversityListResponse: Object, Codable {
         case alpha_two_code = "alpha_two_code"
         case name = "name"
     }
-    
+    ///Convert response object to `UniversityListCellModel` domain.
     func toListCellDomain() -> UniversityListCellModel {
         UniversityListCellModel(
             universityName: name ?? "",

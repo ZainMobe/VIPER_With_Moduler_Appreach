@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+/// `UniversityListView` Implementation
+///![A screenshot of UniversityListView, ](DoclistView)
 class UniversityListView: UIView, UniversityListViewActions {
+    /// TableView will display list of universities
     @IBOutlet var tableView: UITableView!
 
     fileprivate var tableDataSource: [UniversityListCellModel] = []
@@ -23,13 +25,13 @@ class UniversityListView: UIView, UniversityListViewActions {
         super.awakeFromNib()
         setupUI()
     }
-    
+    /// Setup UI. Perform any UI methods and functions here.
     private func setupUI() {
         self.backgroundColor = .clear
         tableView.backgroundColor = .clear
         setupTableView()
     }
-    
+    /// This method will setup `tableView`, register cells,  assign delegates and datasource.
     private func setupTableView() {
         let nib = UINib(nibName: UniversityListViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: UniversityListViewCell.identifier)
@@ -38,7 +40,7 @@ class UniversityListView: UIView, UniversityListViewActions {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+    /// Call this method when `dataSource` is assigned.
     private func modelAssigned() {
         tableDataSource = dataSource?.models ?? []
         tableView.reloadData()

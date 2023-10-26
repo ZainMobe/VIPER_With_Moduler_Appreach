@@ -28,6 +28,7 @@
 		BF515DDD2AE91F0C0035D308 /* UniversityLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF515DDC2AE91F0C0035D308 /* UniversityLocalStorage.swift */; };
 		BF515DDF2AE91F580035D308 /* UniversityNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF515DDE2AE91F580035D308 /* UniversityNetworkDataSource.swift */; };
 		BF515DE12AE920810035D308 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF515DE02AE920810035D308 /* RealmStorage.swift */; };
+		BFF10EDF2AEA3886007EC302 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = BFF10EDE2AEA3886007EC302 /* Documentation.docc */; };
 		C7E1782E2AE7F184000A7D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1782D2AE7F184000A7D2C /* AppDelegate.swift */; };
 		C7E178302AE7F184000A7D2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1782F2AE7F184000A7D2C /* SceneDelegate.swift */; };
 		C7E178352AE7F184000A7D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E178332AE7F184000A7D2C /* Main.storyboard */; };
@@ -101,6 +102,7 @@
 		BF515DDC2AE91F0C0035D308 /* UniversityLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityLocalStorage.swift; sourceTree = "<group>"; };
 		BF515DDE2AE91F580035D308 /* UniversityNetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityNetworkDataSource.swift; sourceTree = "<group>"; };
 		BF515DE02AE920810035D308 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		BFF10EDE2AEA3886007EC302 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		C7E1782A2AE7F184000A7D2C /* TaskAssignmentMain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskAssignmentMain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E1782D2AE7F184000A7D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E1782F2AE7F184000A7D2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BFF10EDD2AEA386C007EC302 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				BFF10EDE2AEA3886007EC302 /* Documentation.docc */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		C7E178212AE7F184000A7D2C = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		C7E1785E2AE7F1C5000A7D2C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BFF10EDD2AEA386C007EC302 /* Documentation */,
 				C7E1785D2AE7F195000A7D2C /* UniversityListingModule */,
 			);
 			path = Modules;
@@ -665,6 +676,7 @@
 				BF114BBE2AE8F983000EFCD1 /* UniversityListView.swift in Sources */,
 				BF114BD12AE90E70000EFCD1 /* UIView+Extension.swift in Sources */,
 				BF114BA82AE7FBAF000EFCD1 /* Constants.swift in Sources */,
+				BFF10EDF2AEA3886007EC302 /* Documentation.docc in Sources */,
 				C7E1782E2AE7F184000A7D2C /* AppDelegate.swift in Sources */,
 				BF515DDF2AE91F580035D308 /* UniversityNetworkDataSource.swift in Sources */,
 				C7E178302AE7F184000A7D2C /* SceneDelegate.swift in Sources */,

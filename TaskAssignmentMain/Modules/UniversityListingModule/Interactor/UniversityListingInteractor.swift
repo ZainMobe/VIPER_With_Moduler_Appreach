@@ -8,19 +8,25 @@
 import Foundation
 import UniversityDetail
 
-
+///`UniversityListingInteractorImpl` implementation
 class UniversityListingInteractorImpl: UniversityListingInteractor {
     typealias Service = UniversityListingServiceActions
-    
+    ///Holds Service actions
     fileprivate let service: Service
+    ///Holds Presenter actions
     var presenter: UniversityListingPresenterInteractorActions?
+    ///Holds Universities actions
     fileprivate var universities = [UniversityListResponse]()
 
-    
+    ///Inject any dependency here.
+    ///- Parameters:
+    ///   - service: `UniversityListingServiceImpl` object confirming to `UniversityListingServiceActions`
     init(service: Service) {
         self.service = service
     }
-    
+    ///This method is will call service to fetch universities list.
+    ///- Parameters:
+    ///  - forceRefresh: Pass `true` to force refresh from server.
     fileprivate func fetchRemoteUniversities(forceRefresh: Bool) {
         service.fetchUniversityList(forceRefresh: forceRefresh) {[weak self] response in
             switch response {

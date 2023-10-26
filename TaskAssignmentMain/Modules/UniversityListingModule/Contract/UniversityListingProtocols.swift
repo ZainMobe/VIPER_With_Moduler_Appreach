@@ -8,34 +8,32 @@
 import Foundation
 
 
-
+/// `Service` will implement only this delegate. If you want to add more actions you can confirm here.
 protocol UniversityListingService: UniversityListingServiceActions {
 }
-
+/// `View` will implement only this delegate. If you want to add more actions you can confirm here.
 protocol UniversityListingView: UniversityListingViewActions {
+    /// `View` can interact with presenter using these presenter delegate actions..
     var presenter: UniversityListingPresenterViewActions! { get set }
 }
-
+/// `Interactor` will implement only this delegate. If you want to add more actions you can confirm here.
 protocol UniversityListingInteractor: UniversityListingInteractorActions {
 }
 
-protocol UniversityListingPresenterInteractorActions {
-    func fetchUniversitySuccess(universities: [UniversityListCellModel])
-    func handleError(error: String)
-}
-
+/// `Presenter` will implement  delegate. If you want to add more actions you can confirm here.
 protocol UniversityListingPresenter: UniversityListingPresenterViewActions, UniversityListingPresenterInteractorActions {
+    /// Use initialiser will be used to inject any dependency to presenter during initialisation.
+
+    ///- Parameters:
+    ///   - view: Pass `UniversityListingViewController` confirmting to delegate `UniversityListingView`.
+    ///   - interactor: Pass `UniversityListingInteractorImpl` confirmting to delegate `UniversityListingInteractor`.
+    ///   - router: Pass `UniversityListingRouterImpl` confirmting to delegate `UniversityListingRouter`.
     init(view: UniversityListingViewActions,
          interactor: UniversityListingInteractorActions,
          router: UniversityListingRouterActions
     )
-    
-    func refreshControlStartRefreshing()
 }
 
-protocol UniversityListingRouterActions: AnyObject {
-    func go(to route: UniversityListingRouterImpl.Routes)
-}
-
+/// `Router` will implement only this delegate. If you want to add more actions you can confirm here.
 protocol UniversityListingRouter: UniversityListingRouterActions {
 }

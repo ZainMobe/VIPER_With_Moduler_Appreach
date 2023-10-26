@@ -7,12 +7,7 @@
 
 import Foundation
 
-
-protocol UniversityNetworkActions: AnyObject {
-    func fetchUniversityList(completion: @escaping ((Result<[UniversityListResponse], Error>) -> Void))
-}
-
-
+//MARK: UniversityNetworkDataSource implementation
 class UniversityNetworkDataSource: UniversityNetworkActions {
     func fetchUniversityList(completion: @escaping ((Result<[UniversityListResponse], Error>) -> Void)) {
         NetworkManager.shared.makeGetRequest(endPoint: APIConstants.search, params: ["country": "pakistan"]) { (response: Result<[UniversityListResponse], Error>) in
